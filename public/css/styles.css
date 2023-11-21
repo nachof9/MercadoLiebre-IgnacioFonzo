@@ -20,7 +20,8 @@ p{
 div.top-header{
     display: flex;
     flex-wrap: wrap;
-    padding: 5%;
+    padding: 2rem;
+    justify-content: space-around;
 }
 
 header div.top-header p{
@@ -38,9 +39,19 @@ header .form{
     width: 50%;
 }
 
+.logo__container {
+    width: 33%;
+    text-align: center;
+}
+
 header div.logo{
     padding: 10px;
 }
+
+.logo {
+    max-width: 270px;
+}
+
 header .form{
     display: flex;
     align-items: center;
@@ -50,6 +61,10 @@ header .form{
 header nav{
     font-size: 12px;
     margin-left: 20px;
+}
+
+.nav__items {
+    display: none;
 }
 
 header ul li{
@@ -66,14 +81,15 @@ header .form .input{
     border: 1px solid #000;
     outline: none;
     color: #666;
-    padding: 2px;
+    padding: 0.7rem;
+    width: 100%;
 }
 
 header .form .submit{
     background-color: #FFF;
     border: 1px solid #000;
     color: #666;
-    width: 10%;
+    padding: 0.7rem;
 }
 
 div.burger-menu{
@@ -131,6 +147,10 @@ main{
     margin: 0 auto;
 }
 
+.home__main {
+    padding-bottom: 3rem;
+}
+
 main section article{
     background-color: #fff;    
     margin: 10px 0px;
@@ -173,7 +193,205 @@ article div.main-article{
     padding: 15px;
 }
 
+.description {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+  
+  .main-article:hover .description {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .main-article:hover {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .fa-truck {
+    transition: transform 0.5s;
+  }
+  
+  .fa-truck:hover {
+    transform: rotate(-90deg);
+  }
+  
+
+/* Footer */
+
+.footer {
+    background-color: white;
+    width: 100%;
+    padding: 1rem 0;
+    color: #666;
+    bottom: 0;
+}
+
+.footer__section {
+    text-align: center;
+    width: 90%;
+    margin: 2em auto;
+}
+
+.footer__icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #1259c3;
+}
+
+.footer__icon:hover {
+    color: #0022AA;
+}
+
+.footer__copyright {
+    font-size: 1rem;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Formulario de registro */
+
+.register {
+    background-color: white;
+    margin: 0;
+    width: 100%;
+    padding: 3rem 0;
+    border-bottom: 2px solid #ebebeb;
+}
+
+
+.form__register {
+    background-color: #ebebeb;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.form__register input {
+    display: block;
+    width: 100%;
+    padding: 1rem ;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 7px;
+}
+
+.birth__date {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.birth__date_input {
+    margin-top: 1rem;
+}
+
+.form__register input[type="radio"] {
+    display: inline;
+    width: 1rem;
+    margin-top: 1rem;
+}
+
+#sell {
+    margin-left: 1rem;
+}
+
+.form__register input[type="checkbox"] {
+    display: inline;
+    width: 1rem;
+    margin-top: 1rem;
+}
+
+.interests {
+    margin-top: 1rem;
+}
+
+.button__submit {
+    background-color: #1259c3;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button__reset {
+    background-color: #e24848;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form__login {
+    width: 90%;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+.form__login input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.form__login input[type="submit"] {
+    background-color: #1259c3;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form__login input[type="submit"]:hover {
+    background-color: #0022AA;
+}
+
+
 @media (min-width: 361px){
+
+    .form__register {
+        background-color: #ebebeb;
+        width: 70%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .form__login {
+        width: 60%;
+    }
+
+    .top-header {
+        display: flex;
+        align-items: center;
+    }
+
+    header .nav__items {
+        display: flex;
+        justify-content: space-around;
+        
+    }
+
+    header .items, header .account-items{
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        
+    }
+
+
+    .top-header .logo, .top-header .form, header div.top-header p {
+        width: 33%;
+    }
+
+    .nav__items {
+        display: block;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
     main section article .description{
         display: block;
     }
@@ -200,74 +418,28 @@ article div.main-article{
     }
 }
 
-.description {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-  }
-  
-  .main-article:hover .description {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-
-  .main-article:hover {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-  
-  
-  .fas.fa-truck {
-    transition: transform 0.5s;
-  }
-  
-  .fas.fa-truck:hover {
-    transform: rotate(-90deg);
-  }
-  
-
-main.login input.submit:hover{
-    background-color: #0022AA;
-}
-
-/* Footer */
-
-.footer {
-    background-color: white;
-    width: 100%;
-    padding: 1rem 0;
-    color: #666;
-}
-
-.footer__section {
-    text-align: center;
-    width: 90%;
-    margin: 2em auto;
-}
-
-.footer__icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: #1259c3;
-}
-
-.footer__copyright {
-    font-size: 1rem;
-    padding-left: 1rem;
-    margin-top: 0.5rem;
-}
-
 @media (min-width: 769px){
+
+    .form__register {
+        background-color: #ebebeb;
+        width: 40%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .form__login {
+        width: 40%;
+    }
+
+
+    main section div.products article{
+        width: 22%;
+    }
+
     .footer__container {
         display: flex;
         width: 90%;
         margin: 0 auto;
         gap: 2rem;
-    }
-}
-
-@media (min-width: 769px){
-    main section div.products article{
-        width: 22%;
     }
 }
